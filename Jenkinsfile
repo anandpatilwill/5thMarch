@@ -12,10 +12,9 @@ pipeline
                         	steps
 				{
           				sh 'sleep 15;echo "This is Buid stage"'
-
 				}
                 	}
-			stage(Test)
+			stage('Test')
 			{
 				steps 
 				{
@@ -26,7 +25,7 @@ pipeline
 			}
 		}	
 	}	
-		stage(Deploy)
+		stage('Deploy')
                 {
                         steps
 			{
@@ -35,7 +34,7 @@ pipeline
 			sleep 15
 			}
                 }
-		stage(My stage)
+		stage('My stage')
                 {
                         steps
 			{
@@ -46,7 +45,4 @@ pipeline
                 }
 
 	}
-
-
-
 }
