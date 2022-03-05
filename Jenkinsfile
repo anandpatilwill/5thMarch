@@ -1,10 +1,11 @@
 pipeline
 {
-	agent any
+	agent none
 	stages 
 	{
 	stage ('Both build and Test')
 	{
+		agent {label 'node1'}
 		parallel  
 		{
 			stage('Build')
@@ -28,6 +29,7 @@ pipeline
 	}	
 		stage('Deploy')
                 {
+		agent {label 'node2'}
                         steps
 			{
 				sh '''
@@ -38,6 +40,7 @@ pipeline
                 }
 		stage('My stage')
                 {
+			agent {label 'node1'}
                         steps
 			{
 			sh '''
