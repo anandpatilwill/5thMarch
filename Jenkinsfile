@@ -1,6 +1,6 @@
 pipeline
 {
-	agent none
+	agent { label 'master'}
 	stages 
 	{
 	stage ('Both build and Test')
